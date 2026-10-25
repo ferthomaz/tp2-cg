@@ -1,0 +1,136 @@
+:root { 
+  font-family: system-ui, sans-serif; 
+  color: #29453b; 
+  background: #dce9e4; 
+}
+
+* {
+  box-sizing: border-box; 
+}
+
+body { 
+  margin: 0;
+}
+
+main { 
+  width: 100%; 
+  height: 100dvh; 
+  min-height: 480px; 
+  position: relative; 
+  overflow: hidden; 
+}
+
+canvas { 
+  width: 100%; 
+  height: 100%; 
+  display: block; 
+  touch-action: none; 
+  outline: none; 
+}
+
+header { 
+  position: absolute; 
+  top: 30px; 
+  left: 36px; 
+  pointer-events: none; 
+}
+
+.eyebrow { 
+  font-size: 10px; 
+  letter-spacing: .22em; 
+  font-weight: 700; 
+}
+
+h1 { 
+  margin: 8px 0; 
+  font-family: Georgia, serif; 
+  font-size: clamp(24px, 3vw, 38px); 
+  font-weight: normal; 
+}
+
+header p { 
+  margin: 0; 
+  font-size: 13px; 
+}
+
+nav { 
+  position: absolute; 
+  right: 32px; 
+  top: 35px; 
+  display: flex; 
+  gap: 6px; 
+}
+
+button { 
+  border: 1px solid #bccac0; 
+  background: #fffffff0; 
+  color: #29453b; 
+  padding: 10px 13px; 
+  border-radius: 8px; 
+  font: inherit; 
+  font-size: 12px; 
+  cursor: pointer; 
+}
+
+button:hover { 
+  background: #e5eddf; 
+}
+
+button[aria-pressed="true"] { 
+  background: #365847; 
+  color: white; 
+  border-color: #365847; 
+}
+
+button:focus-visible, canvas:focus-visible { 
+  outline: 2px solid #b66b32; 
+  outline-offset: -3px; 
+}
+
+footer { 
+  position: absolute; 
+  bottom: 20px; 
+  left: 16px; 
+  right: 16px; 
+  text-align: center; 
+}
+
+.actions { 
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center; 
+  gap: 6px; 
+}
+
+footer p { 
+  margin: 12px 0 0; 
+  font-size: 12px; 
+}
+
+#message { 
+  position: absolute; 
+  bottom: 122px; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  max-width: 90%; 
+  margin: 0; 
+  padding: 9px 16px; 
+  border-radius: 20px; 
+  background: #ffffffdc; 
+  text-align: center; 
+  font-size: 13px; 
+  pointer-events: none; 
+}
+
+#message:empty { 
+  display: none; 
+}
+
+#heart { 
+  position: absolute; 
+  color: #dc596b; 
+  font-size: 38px; 
+  text-shadow: 0 2px 0 white; 
+  transform: translate(-50%, -100%); 
+  pointer-events: none; 
+}
