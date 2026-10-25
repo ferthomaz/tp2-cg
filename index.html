@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Paraíso do feijão!</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <canvas id="canvas" tabindex="0" aria-label="Diorama 3D de um cachorro em uma ilha. Use os controles abaixo."></canvas>
+    <header>
+      <span class="eyebrow">PEQUENO PARAÍSO</span>
+      <h1>Quintal nas nuvens</h1>
+      <p>Faça um carinho no feijão!</p>
+    </header>
+    <nav aria-label="Câmeras">
+      <button data-camera="1" aria-pressed="true">1 · Passeio</button>
+      <button data-camera="2" aria-pressed="false">2 · Orbital</button>
+      <button data-camera="3" aria-pressed="false">3 · Livre</button>
+    </nav>
+    <div id="heart" aria-hidden="true" hidden>♥</div>
+    <p id="message" role="status">Carregando o quintal…</p>
+    <footer>
+      <div class="actions">
+        <button id="pose">P · Mudar posição</button>
+        <button id="light" aria-pressed="true">L · Luz ligada</button>
+        <button id="fog" aria-pressed="false">N · Neblina desligada</button>
+        <button id="sound" aria-pressed="false">M · Ativar som</button>
+        <button id="reset">R · Voltar ao início</button>
+      </div>
+      <p id="help">Passeio automático · use a roda do mouse para aproximar </p>
+    </footer>
+    <noscript>Ative JavaScript para abrir a cena.</noscript>
+  </main>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
