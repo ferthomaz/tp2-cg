@@ -1,3 +1,3 @@
 export const assets = {
-  som: { ambiente: 'assets/sons/ambiente.wav', carinho: 'assets/sons/carinho.wav' }
+  som: { ambiente: 'assets/sons/ambiente.wav', carinho: 'assets/sons/carinho.wav',  rosnado: 'assets/sons/rosnado.wav' }
 }
