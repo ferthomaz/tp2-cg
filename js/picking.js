@@ -24,10 +24,29 @@ export function pickObject(x, y, camera, objects) {
   const direction = v3.normalize(v3.subtract(far, origin))
   let closest = Infinity, hit = null
   for (const object of objects) {
+    if (object.pickable === false) continue
     const local = m4.inverse(object.world)
     const localOrigin = m4.transformPoint(local, origin)
     //não normalizei aqui pra distância continuar comparável entre objetos
     const localDirection = m4.transformDirection(local, direction)
+    //descarta pela caixa do modelo antes de testar seus triângulos detalhados
+    if (object.mesh.bounds) {
+      let near = 0, far = closest
+      const { min, max } = object.mesh.bounds
+      //pequena margem p evitar descartar cliques exatamente nas bordas por arredondamento
+      const margin = 0.00001
+      for (let axis = 0; axis < 3; axis++) {
+        if (Math.abs(localDirection[axis]) < 0.0000001) {
+          if (localOrigin[axis] < min[axis] - margin || localOrigin[axis] > max[axis] + margin) far = -1
+        } else {
+          const a = (min[axis] - margin - localOrigin[axis]) / localDirection[axis]
+          const b = (max[axis] + margin - localOrigin[axis]) / localDirection[axis]
+          near = Math.max(near, Math.min(a, b))
+          far = Math.min(far, Math.max(a, b))
+        }
+      }
+      if (near > far) continue
+    }
     const { position, indices } = object.mesh.arrays
     const count = indices ? indices.length : position.length / 3
     for (let i = 0; i < count; i += 3) {
