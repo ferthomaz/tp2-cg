@@ -1,0 +1,7 @@
+# Material para abrir os OBJ em editores 3D. O diorama usa js/assets.js.
+newmtl paleta
+Kd 1 1 1
+Ka 0 0 0
+Ks 0 0 0
+d 1
+map_Kd ../texturas/caes-paleta.png
