@@ -139,7 +139,7 @@ async function main() {
         state.growlUntil = time + 0.8
         state.scaredAt = time
         sound.growl()
-        notify('Grrr! O pequeno rosnou e o Feijão se assustou!')
+        notify('Grrr! O Pingo rosnou e o Feijão se assustou!')
       } else if (hit?.dog === 'big' && time - state.scaredAt >= 1.8) {
         state.happyUntil = time + 1.6
         sound.pet()
